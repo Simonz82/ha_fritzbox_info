@@ -1,0 +1,8 @@
+#Versione SW Fritz
+- platform: template
+  sensors:
+    fritz_installed_version:
+      friendly_name: "fritz_installed_version"
+      value_template: "{{ states.update.fritz_box_7690_fritz_os.attributes.installed_version }}"
+      unit_of_measurement: "°C"
+      icon_template: mdi:router-wireless

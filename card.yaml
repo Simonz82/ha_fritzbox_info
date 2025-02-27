@@ -1,0 +1,82 @@
+type: custom:button-card
+entity: sensor.fritz_installed_version #versione del firmware installata
+name: Fritz!Box 7690
+icon: mdi:router-wireless
+aspect_ratio: 1/1
+styles:
+  card:
+    - box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3)
+    - border-radius: 10%
+    - padding: 10%
+    - color: ivory
+    - height: 111px
+    - font-size: 10px
+    - text-shadow: 0px 0px 5px black
+    - text-transform: capitalize
+  grid:
+    - grid-template-areas: "\"i ver\" \"n n\" \"stato stato\" \"ip ip\" \"down down\""
+    - grid-template-columns: 1fr 1fr
+    - grid-template-rows: 1fr min-content min-content min-content min-content
+  name: #titolo
+    - font-weight: bold
+    - font-size: 12px
+    - color: white
+    - align-self: middle
+    - justify-self: start
+    - padding-bottom: 4px
+  img_cell:
+    - justify-content: start
+    - align-items: start
+    - margin: none
+  icon: #icona del fritzbox
+    - color: deepskyblue
+    - width: 150px
+    - height: 150px
+    - margin-top: "-10%"
+    - margin-left: "-160%"
+  custom_fields:
+    ver: #versione firmware installata
+      - align-self: start
+      - justify-self: end
+    stato: #stato router
+      - padding-bottom: 2px
+      - align-self: middle
+      - justify-self: start
+    ip: #ip router ext
+      - padding-bottom: 2px
+      - align-self: middle
+      - justify-self: start
+    down: #down and up mbit
+      - align-self: middle
+      - justify-self: start
+custom_fields:
+  ver: |
+    [[[
+      return `<ha-icon
+        style="width: 12px; height: 13px; color: yellow;">
+        </ha-icon><span>ver. ${entity.state}</span>`
+    ]]]
+  stato: |
+    [[[
+      return `<ha-icon
+        icon="mdi:connection"
+        style="width: 12px; height: 12px; color: deepskyblue;">
+        </ha-icon><span> STATE: <span style="color: var(--text-color-sensor);">${states['sensor.fritzbox'].state}</span></span>`
+    ]]]
+  ip: |
+    [[[
+      return `<ha-icon
+        icon="mdi:ip"
+        style="width: 12px; height: 12px; color: deepskyblue;">
+        </ha-icon><span> IP: <span style="color: var(--text-color-sensor);">${states['sensor.fritz_box_7690_ip_esterno'].state}</span></span>`
+    ]]]
+  down: |
+    [[[
+      return `<ha-icon
+        icon="mdi:download"
+        style="width: 12px; height: 12px; color: deepskyblue;">
+        </ha-icon><span> D-U: <span style="color: var(--text-color-sensor);">${states['sensor.portante_download_agganciata'].state} - ${states['sensor.portante_upload_agganciata'].state} </span></span>`
+    ]]]
+tap_action:
+  action: navigate
+  navigation_path: "#fritzhome"
