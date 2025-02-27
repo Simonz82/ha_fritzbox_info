@@ -77,6 +77,4 @@ custom_fields:
         style="width: 12px; height: 12px; color: deepskyblue;">
         </ha-icon><span> D-U: <span style="color: var(--text-color-sensor);">${states['sensor.portante_download_agganciata'].state} - ${states['sensor.portante_upload_agganciata'].state} </span></span>`
     ]]]
-tap_action:
-  action: navigate
-  navigation_path: "#fritzhome"
+
