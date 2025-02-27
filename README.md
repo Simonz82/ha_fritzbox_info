@@ -1,6 +1,8 @@
 <h2><span style="text-decoration: underline;"><strong>🛜 Fritz!box Info</strong></span></h2>
 
 CARD per mostrare informazioni del nostro Fritz!box
+<p><img src="example/example1.jpg" alt="" /></p>
+
 <p>Volevo condividere una scheda che ho creato con l'aiuto delle varie community per visualizzare le informazioni di una persona tramite l'utilizzo dell'app HA companion.</p>
 
 <p dir="auto">Istruzioni:</p>
@@ -18,7 +20,9 @@ poi ...
 
 <strong>Alla fine ci troveremo ad avere questo risultato finale:</strong><br />
 
-<p><img src="example/example1.jpg" alt="" /></p>
+<p><img src="example/example2.jpg" alt="" /></p>
+
+<p><img src="example/example3.jpg" alt="" /></p>
 
 <p>Enjoy!</p>
 
